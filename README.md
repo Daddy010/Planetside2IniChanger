@@ -6,6 +6,8 @@ The tool creates a new folder in your Planetside 2 Directory with the name "inis
 
 !!! Please create a backup of your current prefered UserOptions.ini since it will be overwritten by my tool!!!
 
+For Download klick on the PS2INISWAPPER.jar and download it there.
+
 ![Screenshot](SwapperScreen.png)
 
 
