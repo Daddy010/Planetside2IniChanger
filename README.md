@@ -6,5 +6,7 @@ The tool creates a new folder in your Planetside 2 Directory with the name "inis
 
 !!! Please create a backup of your current prefered UserOptions.ini since it will be overwritten by my tool!!!
 
+!Picture of Tool(https://github.com/Daddy010/Planetside2IniChanger/blob/master/SwapperScreen.png?raw=true)
+
 
 If there is any questions, bugs or other things you want to tell me, do not hesitate to contact me on Discord: Daddy010#4511
