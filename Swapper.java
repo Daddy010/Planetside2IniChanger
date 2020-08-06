@@ -25,9 +25,12 @@ public class Swapper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//Create Settings Directory
 		new File("C:\\PS2SwapperSettings").mkdir();
 		new File("C:\\PS2SwapperSettings\\inis").mkdir();
 
+		//Check if path.txt file exists, if not opens Prompt to set Directory
 		String file_name = "C:\\PS2SwapperSettings\\path.txt";
 		File f = new File(file_name);
 		if (f.exists() && !f.isDirectory()) {
@@ -41,7 +44,8 @@ public class Swapper {
 	public static void BuildGui() {
 
 		String filename = "C:\\PS2SwapperSettings\\path.txt";
-
+		
+		//Read Path from path.txt
 		try {
 			content = new String(Files.readAllBytes(Paths.get(filename)));
 		} catch (IOException e2) {
