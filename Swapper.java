@@ -1,9 +1,7 @@
 package ps2.iniswapper;
 
 import java.awt.FlowLayout;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,12 +23,10 @@ public class Swapper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//Create Settings Directory
+
 		new File("C:\\PS2SwapperSettings").mkdir();
 		new File("C:\\PS2SwapperSettings\\inis").mkdir();
 
-		//Check if path.txt file exists, if not opens Prompt to set Directory
 		String file_name = "C:\\PS2SwapperSettings\\path.txt";
 		File f = new File(file_name);
 		if (f.exists() && !f.isDirectory()) {
@@ -44,8 +40,7 @@ public class Swapper {
 	public static void BuildGui() {
 
 		String filename = "C:\\PS2SwapperSettings\\path.txt";
-		
-		//Read Path from path.txt
+
 		try {
 			content = new String(Files.readAllBytes(Paths.get(filename)));
 		} catch (IOException e2) {
@@ -71,6 +66,7 @@ public class Swapper {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			startgame(content);
 		});
 
 		tank = new JButton("Use Tank ini");
@@ -83,6 +79,8 @@ public class Swapper {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			startgame(content);
+
 		});
 
 		infantry = new JButton("Use Infantry ini");
@@ -95,6 +93,7 @@ public class Swapper {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			startgame(content);
 		});
 
 		frame.add(air);
@@ -125,6 +124,19 @@ public class Swapper {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+
+	}
+
+	public static void startgame(String content) {
+
+		try {
+			String command = content + "\\LaunchPad.exe";
+			Runtime run = Runtime.getRuntime();
+			Process proc = run.exec(command);
+
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "There was an error launching your game. Please launch it manually");
 		}
 
 	}
