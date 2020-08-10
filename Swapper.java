@@ -23,10 +23,14 @@ public class Swapper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		try {
 
-		new File("C:\\PS2SwapperSettings").mkdir();
-		new File("C:\\PS2SwapperSettings\\inis").mkdir();
+			new File("C:\\PS2SwapperSettings").mkdir();
+			new File("C:\\PS2SwapperSettings\\inis").mkdir();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		String file_name = "C:\\PS2SwapperSettings\\path.txt";
 		File f = new File(file_name);
 		if (f.exists() && !f.isDirectory()) {
@@ -133,6 +137,7 @@ public class Swapper {
 		try {
 			String command = content + "\\LaunchPad.exe";
 			Runtime run = Runtime.getRuntime();
+			@SuppressWarnings("unused")
 			Process proc = run.exec(command);
 
 		} catch (IOException e) {
